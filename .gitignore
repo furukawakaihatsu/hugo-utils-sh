@@ -1,0 +1,10 @@
+.*
+**/.*
+
+hugo_*_linux-amd64/
+hugo_*_linux-arm64/
+hugo_*_darwin-universal/
+
+# Exclude
+!.gitignore
+!.github
