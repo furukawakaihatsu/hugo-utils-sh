@@ -8,4 +8,45 @@ sudo apt update && sudo apt upgrade -y && \
     rm README.md LICENSE hugo_0.146.5_linux-amd64.tar.gz && \
     rm ./layouts/term.html ./layouts/taxonomy.html && \
     rm ./layouts/_partials/terms.html ./layouts/_partials/menu.html && \
-    rm -r ./layouts/_partials/head
+    rm -r ./layouts/_partials/head && \
+    rm ./hugo.toml && \
+    echo "baseURL = ''
+languageCode = 'ja'
+title = ''
+copyright = '©︎'
+publish = 'public'
+disableKinds = ["term","categories","tags"]
+summary = 'summaryLength (20)'
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+
+[outputFormats.RSS]
+  mediaType = "application/rss+xml"
+  baseName = "rss"
+  isPlainText = true
+
+[outputs.posts]
+  section = ["HTML", "RSS"]
+
+[permalinks]
+  posts = '/posts/:slug/'
+    
+[taxonomies]
+
+[params]
+  description = ''
+  favicon = 'favicon.ico'
+
+  [params.google]
+    siteVerification = ''
+
+  [params.GoogleAnalytics]
+    gtag = ''" > hugo.toml
